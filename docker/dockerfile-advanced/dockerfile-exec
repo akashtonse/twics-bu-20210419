@@ -4,4 +4,4 @@ CMD ["-c"]
 
 # docker build -t eptest -f dockerfile-exec .
 # docker run -it --rm --name test  eptest -H
-# docker exec -it eptest ps aux
+# docker exec -it test ps aux
