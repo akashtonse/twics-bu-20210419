@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: topology-zone-constraint-11
+  name: topology-zone-constraint-12
   labels:
     foo: bar
 spec:
@@ -11,7 +11,7 @@ spec:
     whenUnsatisfiable: DoNotSchedule
     labelSelector:
       matchLabels:
-        foo: bar
+        foo: ba
   containers:
   - name: pause
     image: k8s.gcr.io/pause:3.1
