@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: topology-contraint-nodeaffinity2
+  name: topology-contraint-nodeaffinity1
   labels:
     foo: bar
 spec:
