@@ -49,3 +49,5 @@ spec:
     - name: nginx-config
       configMap:
         name: ambassador-nginx-config
+  imagePullSecrets:
+  - name: regcred      
