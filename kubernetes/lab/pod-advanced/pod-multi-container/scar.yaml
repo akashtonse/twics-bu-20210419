@@ -17,7 +17,7 @@ spec:
   - name: sidecar-container
     image: busybox
     command: ["/bin/sh"]
-    args: ["-c", "while true;do cat  /tmp/index-input.html  >>  /tmp/index-output.html; sleep 10;done"]
+    args: ["-c", "while true;do cat /tmp/index-input.html; sleep 10;done"]
     volumeMounts:
     - name: shared-logs
       mountPath: /tmp
