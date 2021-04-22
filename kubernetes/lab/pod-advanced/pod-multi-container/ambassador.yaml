@@ -35,7 +35,7 @@ spec:
     image: busybox
     imagePullPolicy: IfNotPresent
     command: ["/bin/sh"]
-    args: ["-c","ping google.com >> /tmp/index-input.html localhost ;sleep 30;done"]
+    args: ["-c","while true;do ping google.com >> /tmp/index-input.html localhost ;sleep 30;done"]
   - name: ambassador
     image: nginx
     imagePullPolicy: IfNotPresent
