@@ -15,7 +15,7 @@ data:
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       upstream backend {
-        server www.brainupgrade.in:80;
+        server brainupgrade.in:80;
       }
       server {
         listen 80;      
