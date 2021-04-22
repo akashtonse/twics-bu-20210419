@@ -35,16 +35,16 @@ spec:
     image: busybox
     imagePullPolicy: IfNotPresent
     command: ["/bin/sh"]
-    args: ["-c","while true;do ping google.com >> /tmp/index-input.html localhost ;sleep 30;done"]
+    args: ["-c","while true; do ping www.google.com >> /tmp/index.html localhost ;sleep 30;done"]
   - name: ambassador
     image: nginx
     imagePullPolicy: IfNotPresent
     ports:
     - containerPort: 80        
-    volumeMounts:
-      - name: nginx-config
-        mountPath: /etc/nginx/nginx.conf
-        subPath: nginx.conf
+    #volumeMounts:
+     # - name: nginx-config
+      #  mountPath: /etc/nginx/nginx.conf
+       # subPath: nginx.conf
   volumes:
     - name: nginx-config
       configMap:
