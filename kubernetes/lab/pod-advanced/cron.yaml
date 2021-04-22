@@ -16,3 +16,5 @@ spec:
             - -c
             - date; echo Hello from Brain Upgrade Kubernetes Cluster
           restartPolicy: OnFailure
+          imagePullSecrets:
+          - name: regcred  
