@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: adapter
+spec:
+  volumes:
+  - name: shared-logs 
+    emptyDir: {}
+  containers:
+  - name: main-container
+    image: alpine
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do date >> /tmp/index.html; sleep 10;done"]
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /tmp
+  - name: adapter-container
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true;cp /tmp/index.html /tmp/index-output.html; sleep 5; done"]
+    volumeMounts:
+    - name: shared-logs
+      mountPath: /tmp
+  imagePullSecrets:
+  - name: regcred    
